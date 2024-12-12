@@ -1,5 +1,11 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
+import { Box, Typography } from "@mui/material";
 import Header from "../components/Header";
+import "./styles.css"; 
 
 const HomePage = () => {
   return (
@@ -22,10 +28,56 @@ const HomePage = () => {
         <Typography variant="h5" sx={{ mb: 3 }}>
           Najlepsze pieczywo prosto z pieca
         </Typography>
-        <img src="path/to/your/image.jpg" alt="Bakery" style={{ maxWidth: "100%", marginBottom: "2rem" }} />
-        <Button variant="contained" color="primary" onClick={() => console.log("Przejdź do logowania!")}>
-          Zaloguj się
-        </Button>
+
+       
+        <Swiper
+          pagination={{ clickable: true }}
+          navigation
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+          style={{
+            maxWidth: "800px", // Maksymalna szerokość Swipera
+            maxHeight: "400px", // Maksymalna wysokość Swipera
+            width: "100%", // Ustaw szerokość na 100% dla responsywności
+            height: "100%", // Ustaw wysokość na 100% dla responsywności
+            margin: "20px auto", // Wyśrodkuj Swiper
+          }}
+        >
+
+          <SwiperSlide>
+            <img src="/assets/bread1.png" alt="Bread" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "cover" }} />
+            <div className="swiper-text">Chleby</div>
+          </SwiperSlide>
+
+
+          <SwiperSlide>
+            <img src="/assets/roll1.png" alt="Bread" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "cover" }} />
+            <div className="swiper-text">Bulki</div>
+          </SwiperSlide>
+
+
+          <SwiperSlide>
+            <img src="/assets/everything1.png" alt="Bread" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "cover" }} />
+            <div className="swiper-text">Wszystko</div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src="/assets/bread1.png" alt="Bread" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "cover" }} />
+            <div className="swiper-text">Bread</div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src="/assets/bread1.png" alt="Bread" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "cover" }} />
+            <div className="swiper-text">Bread</div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src="/assets/bread1.png" alt="Bread" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "cover" }} />
+            <div className="swiper-text">Bread</div>
+          </SwiperSlide>
+
+          
+        </Swiper>
       </Box>
     </>
   );
